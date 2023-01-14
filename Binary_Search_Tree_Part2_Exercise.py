@@ -50,18 +50,6 @@ class BinarySearchTreeNode:
 
         return elements
 
-    def in_order_traversal(self):
-        elements = []
-        if self.left:
-            elements += self.left.in_order_traversal()
-
-        elements.append(self.data)
-
-        if self.right:
-            elements += self.right.in_order_traversal()
-
-        return elements
-
     def delete(self, val):
         if val < self.data:
             if self.left:
@@ -103,6 +91,21 @@ def build_tree(elements):
     return root
 
 if __name__ == '__main__':
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    numbers_tree.delete(20)
+    # This should print [1, 4, 9, 17, 18, 23, 34]
+    print("After deleting 20 ",numbers_tree.in_order_traversal())
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    numbers_tree.delete(17)
+    # This should print [1, 4, 9, 18, 20, 23, 34]
+    print("After deleting 17 ",numbers_tree.in_order_traversal())
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    numbers_tree.delete(9)
+    # This should print [1, 4, 17, 18, 20, 23, 34]
+    print("After deleting 9 ",numbers_tree.in_order_traversal()) 
+    
+    print()
+
     FullName = build_tree(["K","E","N","T", "A","N","G","E","L","O", "C","A","B","A","N","A","G"])
     FullName.delete("K")
     print("After deleting K ",FullName.in_order_traversal())
