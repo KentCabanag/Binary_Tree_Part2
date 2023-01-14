@@ -117,5 +117,5 @@ if __name__ == '__main__':
 
     FullName = build_tree(["K","E","N","T", "A","N","G","E","L","O", "C","A","B","A","N","A","G"])
     FullName.delete("A")
-    print("After deleting K ",FullName.in_order_traversal())
+    print("After deleting A ",FullName.in_order_traversal())
 
